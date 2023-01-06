@@ -15,10 +15,19 @@ namespace Common
         {
         }
 
-        public Podatak(int id, double vrednost)
+        public Podatak(int id = 0, double vrednost = 0)
         {
-            Id = id;
+            if (id > 0)
+            {
+                Id = id;
+            }
+            else
+            {
+                throw new ArgumentException("Id mora biti veci od 0");
+            }
+
             Vrednost = vrednost;
         }
+
     }
 }
