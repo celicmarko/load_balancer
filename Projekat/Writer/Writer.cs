@@ -9,6 +9,7 @@ namespace Writer
 {
     public class Writer
     {
-        public Podatak podatak { get; set; }
+        public Podatak podatak { get; set; }      
+              
     }
 }
