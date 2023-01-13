@@ -11,17 +11,8 @@ namespace DatabaseCRUD
 {
     public class DatabaseCRUDComp : IDatabase
     {
-        public bool PostojiUBazi(int id)
-        {
-            using (IDbConnection connection = Connection.GetConnection())
-            {
-                connection.Open();
-                return PostojiUBazi(id, connection);
-            }
-        }
-    }
 
-    private bool PostojiUBazi(int id, IDbConnection connection)
+        private bool PostojiUBazi(int id, IDbConnection connection)
         {
             string query = "select * from brojilo where id = :id_b";
 
@@ -34,4 +25,15 @@ namespace DatabaseCRUD
                 return command.ExecuteScalar() != null;
             }
         }
+        public bool PostojiUBazi(int id)
+        {
+            using (IDbConnection connection = Connection.GetConnection())
+            {
+                connection.Open();
+                return PostojiUBazi(id, connection);
+            }
+        }
+    }
+
+    
 }
