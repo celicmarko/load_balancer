@@ -63,6 +63,30 @@ namespace DatabaseCRUD
                 return command.ExecuteNonQuery();
             }
         }
+
+        public int UpisUBazuBrPotrosnja(PodatakPotrosnja podatakPotrosnja, IDbConnection connection)
+        {
+            string insertSql = "INSERT INTO brpotrosnja (idbr, potrosnja, mesec, idmerenja)" +
+                " VALUES (:idbr_b, :potrosnja_b, :mesec_b, :idmerenja_b)";
+            string updateSql = "update brpotrosnja set idbr = :idbr_b, potrosnja = :potrosnja_b, " +
+                "mesec = :mesec_b where idmerenja = :idmerenja_b";
+
+            using (IDbCommand command = connection.CreateCommand())
+            {
+                command.CommandText = PostojiUBazi(podatakPotrosnja.IdMerenja, connection) ? updateSql : insertSql;
+                ParameterUtil.AddParameter(command, "idbr_b", DbType.Int32);
+                ParameterUtil.AddParameter(command, "potrosnja_b", DbType.Int32);
+                ParameterUtil.AddParameter(command, "mesec_b", DbType.Int32);
+                ParameterUtil.AddParameter(command, "idmerenja_b", DbType.Int32);
+                command.Prepare();
+                ParameterUtil.SetParameterValue(command, "idbr_b", podatakPotrosnja.IdBrojila);
+                ParameterUtil.SetParameterValue(command, "potrosnja_b", podatakPotrosnja.Potrosnja);
+                ParameterUtil.SetParameterValue(command, "mesec_b", podatakPotrosnja.Mesec);
+                ParameterUtil.SetParameterValue(command, "idmerenja_b", podatakPotrosnja.IdMerenja);
+
+                return command.ExecuteNonQuery();
+            }
+        }
     }
 
     
