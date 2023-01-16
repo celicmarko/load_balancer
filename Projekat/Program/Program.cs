@@ -4,11 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DatabaseCRUD;
+using Writer;
 
 namespace Program
 {
     class Program
     {
+        public static Writer writer = new Writer();
+
         static void Main(string[] args)
         {
 
