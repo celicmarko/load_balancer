@@ -9,11 +9,11 @@ namespace LoadBalancer
 {
     public class Buffer
     {
-        public List<Podatak> buffer {get; set; }
+        public List<Podatak> LoadBalancerbuffer {get; set; }
 
         public Buffer() 
         { 
-            buffer = new List<Podatak>();
+            LoadBalancerbuffer = new List<Podatak>();
         }
     }
 }
