@@ -50,6 +50,10 @@
       <Project>{AA935F93-473B-45D7-8681-7396993858D5}</Project>
       <Name>Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\LoadBalancer\LoadBalancer.csproj">
+      <Project>{035A2DFE-0512-402E-8786-E2A90D2C866A}</Project>
+      <Name>LoadBalancer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

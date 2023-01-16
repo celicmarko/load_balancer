@@ -1,4 +1,5 @@
 ﻿using Common;
+using LoadBalancer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,8 @@ namespace Writer
 {
     public class Writer
     {
-        public Podatak podatak { get; set; }      
-              
-    }
+        public LoadBalancerComp loadBalancer { get; set; }
+        public Podatak podatak { get; set; }
+
+}
 }
