@@ -43,6 +43,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IDatabase.cs" />
+    <Compile Include="ILoadBalancer.cs" />
+    <Compile Include="ISlanje.cs" />
     <Compile Include="Podatak.cs" />
     <Compile Include="PodatakPotrosnja.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

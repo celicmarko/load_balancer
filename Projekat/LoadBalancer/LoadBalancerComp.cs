@@ -23,10 +23,6 @@ namespace LoadBalancer
         public void SmestanjeUBafer(Podatak podatak)
         {
             buffer.LoadBalancerbuffer.Add(podatak);
-
-
-
-            
         }
     }
 }

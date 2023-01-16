@@ -19,9 +19,9 @@ namespace DatabaseCRUD
             using (IDbCommand command = connection.CreateCommand())
             {
                 command.CommandText = query;
-                ParameterUtil.AddParameter(command, "id", DbType.Int32);
+                ParameterUtil.AddParameter(command, "id_b", DbType.Int32);
                 command.Prepare();
-                ParameterUtil.SetParameterValue(command, "id", id);
+                ParameterUtil.SetParameterValue(command, "id_b", id);
                 return command.ExecuteScalar() != null;
             }
         }
@@ -31,6 +31,29 @@ namespace DatabaseCRUD
             {
                 connection.Open();
                 return PostojiUBazi(id, connection);
+            }
+        }
+
+
+        private bool PostojiUBaziMerenja(int id, IDbConnection connection)
+        {
+            string query = "select * from brpotrosnja where idmerenja = :idmerenja_b";
+
+            using (IDbCommand command = connection.CreateCommand())
+            {
+                command.CommandText = query;
+                ParameterUtil.AddParameter(command, "idmerenja_b", DbType.Int32);
+                command.Prepare();
+                ParameterUtil.SetParameterValue(command, "idmerenja_b", id);
+                return command.ExecuteScalar() != null;
+            }
+        }
+        public bool PostojiUBaziMerenja(int id)
+        {
+            using (IDbConnection connection = Connection.GetConnection())
+            {
+                connection.Open();
+                return PostojiUBaziMerenja(id, connection);
             }
         }
 
