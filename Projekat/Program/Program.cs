@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Common;
 using DatabaseCRUD;
 using Writer;
 
@@ -16,6 +17,8 @@ namespace Program
         {
 
             DatabaseCRUDComp baza = new DatabaseCRUDComp();
+
+            PodatakPotrosnja podatakPotrosnja = new PodatakPotrosnja();
 
             while (true)
             {
@@ -52,6 +55,13 @@ namespace Program
                     int potrosnja = int.Parse(Console.ReadLine());
                     Console.WriteLine("Unesi mesec merenja: ");
                     int mesec = int.Parse(Console.ReadLine());
+
+                    podatakPotrosnja.IdMerenja = idMerenja;
+                    podatakPotrosnja.IdBrojila = idBrojila;
+                    podatakPotrosnja.Potrosnja = potrosnja;
+                    podatakPotrosnja.Mesec = mesec;
+
+
 
                 }
             }
