@@ -56,6 +56,10 @@
       <Project>{26544A40-3342-4B96-90D4-4F38223321BC}</Project>
       <Name>DatabaseCRUD</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Writer\Writer.csproj">
+      <Project>{0D17D4D8-A7E6-4FDA-B5F3-EE25F2E9F554}</Project>
+      <Name>Writer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

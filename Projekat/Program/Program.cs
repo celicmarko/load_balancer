@@ -10,7 +10,7 @@ namespace Program
 {
     class Program
     {
-        public static Writer writer = new Writer();
+        public static WriterComp writer = new WriterComp();
 
         static void Main(string[] args)
         {
