@@ -19,11 +19,12 @@ namespace Writer
             podatak = new Podatak();
         }
 
-        public bool SlanjePoruke()
+        public void SlanjePoruke()
         {
             Podatak podatak = new Podatak();
 
-            return false;
+            Korisnik korisnik = new Korisnik();
+            korisnik.SlanjeMerenja($"TEST");
         }
 
     }

@@ -61,7 +61,7 @@ namespace Program
                     podatakPotrosnja.Potrosnja = potrosnja;
                     podatakPotrosnja.Mesec = mesec;
 
-
+                    writer.SlanjePoruke();
 
                 }
             }

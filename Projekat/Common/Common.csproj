@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,7 +45,8 @@
   <ItemGroup>
     <Compile Include="IDatabase.cs" />
     <Compile Include="ILoadBalancer.cs" />
-    <Compile Include="ISlanje.cs" />
+    <Compile Include="ISlanjePoruke.cs" />
+    <Compile Include="Korisnik.cs" />
     <Compile Include="Podatak.cs" />
     <Compile Include="PodatakPotrosnja.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -52,6 +52,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{AA935F93-473B-45D7-8681-7396993858D5}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DatabaseCRUD\DatabaseCRUD.csproj">
       <Project>{26544A40-3342-4B96-90D4-4F38223321BC}</Project>
       <Name>DatabaseCRUD</Name>
