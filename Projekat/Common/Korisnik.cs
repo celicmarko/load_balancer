@@ -13,7 +13,7 @@ namespace Common
 
         public Korisnik()
         {
-            string address = "net.tcp://localhost:5500/ISlanjePoruke";
+            string address = "net.tcp://localhost:4000/ISlanjePoruke";
             NetTcpBinding binding = new NetTcpBinding();
 
             ChannelFactory<ISlanjePoruke> kanal = new ChannelFactory<ISlanjePoruke>(binding, address);

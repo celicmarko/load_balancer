@@ -8,13 +8,15 @@ using System.Threading.Tasks;
 
 namespace Logger
 {
-    public class LoggerComp
+    class LoggerComp
     {
         static void Main(string[] args)
         {
             using (ServiceHost serviceHost = new ServiceHost(typeof(LoggerService)))
             {
-                serviceHost.AddServiceEndpoint(typeof(ISlanjePoruke), new NetTcpBinding(), new Uri("net.tcp://localhost:5500/ISlanjePoruke"));
+                NetTcpBinding binding = new NetTcpBinding();
+
+                serviceHost.AddServiceEndpoint(typeof(ISlanjePoruke), binding, new Uri("net.tcp://localhost:4000/ISlanjePoruke"));
                 serviceHost.Open();
 
                 while (true)
@@ -26,7 +28,6 @@ namespace Logger
                     }
                 }
             }
-
         }
     }
 }

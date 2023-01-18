@@ -13,7 +13,7 @@ namespace Logger
 
         public void SlanjeMerenja(string merenje)
         {
-            primljenaPoruka = merenje;    
+            primljenaPoruka = merenje;
         }
     }
 }
