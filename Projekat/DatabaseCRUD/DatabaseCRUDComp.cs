@@ -110,6 +110,62 @@ namespace DatabaseCRUD
                 return command.ExecuteNonQuery();
             }
         }
+
+        public List<Podatak> pronadjiSvePodatke()
+        {
+            List<Podatak> podaciLista = new List<Podatak>();
+            string query = "select * from brojilo";
+
+            using (IDbConnection connection = Connection.GetConnection())
+            {
+                connection.Open();
+                using (IDbCommand command = connection.CreateCommand())
+                {
+                    command.CommandText = query;
+                    command.Prepare();
+
+                    using (IDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Podatak temp = new Podatak(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetInt32(4), reader.GetString(5), reader.GetInt32(6));
+                            podaciLista.Add(temp);
+                        }
+                    }
+                }
+            }
+                return podaciLista;
+        }
+
+        public List<PodatakPotrosnja> pronadjiSvaMerenja(int id)
+        {
+            List<PodatakPotrosnja> podaciLista = new List<PodatakPotrosnja>();
+            string query = "select * from brpotrosnja where idbr = :idbr_b";
+
+            using (IDbConnection connection = Connection.GetConnection())
+            {
+                connection.Open();
+                using (IDbCommand command = connection.CreateCommand())
+                {
+                    command.CommandText = query;
+                    ParameterUtil.AddParameter(command, "idbr_b", DbType.Int32);
+                    command.Prepare();
+                    ParameterUtil.SetParameterValue(command, "idbr_b", id);
+
+                    using (IDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            PodatakPotrosnja temp = new PodatakPotrosnja(reader.GetInt32(0), reader.GetInt32(1), reader.GetInt32(2), reader.GetInt32(3));
+                            podaciLista.Add(temp);
+                        }
+                    }
+                }
+            }
+            return podaciLista;
+        }
+
+
     }
 
     
