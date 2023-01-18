@@ -32,5 +32,17 @@ namespace Common
             }
             
         }
+
+        public static string GetFormattedHeader()
+        {
+            return string.Format("{0,-6} {1,-35} {2,-20} {3,-35}",
+                "ID_MERENJA", "ID_BROJILA", "POTROSNJA", "MESEC");
+        }
+
+        public override string ToString()
+        {
+            return string.Format("{0,-6} {1,-35} {2,-20} {3,-35}",
+                IdMerenja, IdBrojila, Potrosnja, Mesec);
+        }
     }
 }
