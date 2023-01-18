@@ -36,6 +36,18 @@ namespace Common
                 Grad = grad;
                 Post = post;
             }
-        }   
+        }
+
+        public static string GetFormattedHeader()
+        {
+            return string.Format("{0,-6} {1,-35} {2,-20} {3,-35} {4,-30} {5, -35} {6, -30}",
+                "ID", "IME", "PREZIME", "ULICA", "BROJ", "GRAD", "POST");
+        }
+
+        public override string ToString()
+        {
+            return string.Format("{0,-6} {1,-35} {2,-20} {3,-35} {4,-30} {5, -35} {6, -30}",
+                Id, Ime, Prezime, Ulica, Broj, Grad, Post);
+        }
     }
 }
