@@ -11,20 +11,20 @@ namespace Writer
     public class WriterComp
     {
         public LoadBalancerComp loadBalancer { get; set; }
-        public Podatak podatak { get; set; }
+        public PodatakPotrosnja podatakPotrosnja { get; set; }
 
         public WriterComp()
         {
             loadBalancer = new LoadBalancerComp();
-            podatak = new Podatak();
+            podatakPotrosnja = new PodatakPotrosnja();
         }
 
-        public void SlanjePoruke()
+        public void SlanjePoruke(PodatakPotrosnja podatak)
         {
-            Podatak podatak = new Podatak();
+            loadBalancer.SmestanjeUBafer(podatak);
 
             Korisnik korisnik = new Korisnik();
-            korisnik.SlanjeMerenja($"TEST");
+            korisnik.SlanjeMerenja($"MERENJA USPESNO POSLATA WRITERU I SMESTENA U BUFFER");
         }
 
     }

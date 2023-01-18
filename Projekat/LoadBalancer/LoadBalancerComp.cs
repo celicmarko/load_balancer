@@ -20,9 +20,11 @@ namespace LoadBalancer
             brojac = 0;
         }
 
-        public void SmestanjeUBafer(Podatak podatak)
+        public void SmestanjeUBafer(PodatakPotrosnja podatak)
         {
             buffer.LoadBalancerbuffer.Add(podatak);
+
+            Console.WriteLine(buffer.LoadBalancerbuffer.Count());
         }
     }
 }

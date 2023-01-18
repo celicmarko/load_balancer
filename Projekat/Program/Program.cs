@@ -22,8 +22,12 @@ namespace Program
 
             while (true)
             {
+                Console.WriteLine("============ LOADBALANCER ============");
+                Console.WriteLine("Odaberite jednu od opcija: ");
                 Console.WriteLine("1 - Unos merenja");
-                Console.WriteLine("0 - Kraj");
+                Console.WriteLine("2 - Ispis svih elektricnih brojila");
+                Console.WriteLine("3 - Ispis merenja po brojilu");
+                Console.WriteLine("0 - Kraj\n");
 
                 int unos = int.Parse(Console.ReadLine());
 
@@ -36,24 +40,24 @@ namespace Program
 
                 void unosMerenja()
                 {
-                    Console.WriteLine("Unesite ID brojila: ");
+                    Console.WriteLine("\nUnesite ID brojila: ");
                     int idBrojila = int.Parse(Console.ReadLine());
                     if (baza.PostojiUBazi(idBrojila) != true)
                     {
-                        Console.WriteLine("Uneti ID brojila se ne nalazi u bazi");
+                        Console.WriteLine("GRESKA: Uneti ID brojila se ne nalazi u bazi");
                         return;
                     }
-                    Console.WriteLine("ID brojila pronadjen u bazi");
-                    Console.WriteLine("Unesi ID merenja: ");
+                    Console.WriteLine("USPESNO: ID brojila pronadjen u bazi");
+                    Console.WriteLine("MERENJE: Unesi ID merenja: ");
                     int idMerenja = int.Parse(Console.ReadLine());
                     if(baza.PostojiUBaziMerenja(idMerenja) == true)
                     {
-                        Console.WriteLine("Uneti ID merenja vec postoji u bazi");
+                        Console.WriteLine("GRESKA: Uneti ID merenja vec postoji u bazi");
                         return;
                     }
-                    Console.WriteLine("Unesi potrosnju brojila u kW: ");
+                    Console.WriteLine("MERENJE: Unesi potrosnju brojila u kW: ");
                     int potrosnja = int.Parse(Console.ReadLine());
-                    Console.WriteLine("Unesi mesec merenja: ");
+                    Console.WriteLine("MERENJE: Unesi mesec merenja: ");
                     int mesec = int.Parse(Console.ReadLine());
 
                     podatakPotrosnja.IdMerenja = idMerenja;
@@ -61,7 +65,8 @@ namespace Program
                     podatakPotrosnja.Potrosnja = potrosnja;
                     podatakPotrosnja.Mesec = mesec;
 
-                    writer.SlanjePoruke();
+                    
+                    writer.SlanjePoruke(podatakPotrosnja);
 
                 }
             }

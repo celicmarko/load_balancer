@@ -8,6 +8,6 @@ namespace Common
 {
     public interface ILoadBalancer
     {
-        void SmestanjeUBafer(Podatak podatak);
+        void SmestanjeUBafer(PodatakPotrosnja podatak);
     }
 }
