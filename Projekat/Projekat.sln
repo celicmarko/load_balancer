@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.4.33205.214
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1913
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Program", "Program\Program.csproj", "{CFD1D734-2FA8-4A11-8520-279693729EF3}"
 EndProject
@@ -19,6 +19,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Model", "Model", "{C264DC85
 		BRpotrosnja.sql = BRpotrosnja.sql
 		insertSql.sql = insertSql.sql
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logger", "Logger\Logger.csproj", "{A786F00C-71A8-4223-AB55-63CE46022583}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -46,6 +48,10 @@ Global
 		{26544A40-3342-4B96-90D4-4F38223321BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{26544A40-3342-4B96-90D4-4F38223321BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{26544A40-3342-4B96-90D4-4F38223321BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A786F00C-71A8-4223-AB55-63CE46022583}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A786F00C-71A8-4223-AB55-63CE46022583}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A786F00C-71A8-4223-AB55-63CE46022583}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A786F00C-71A8-4223-AB55-63CE46022583}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
