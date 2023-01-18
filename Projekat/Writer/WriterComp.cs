@@ -25,6 +25,7 @@ namespace Writer
         public void SlanjePoruke(PodatakPotrosnja podatak)
         {
             loadBalancer.SmestanjeUBafer(podatak);
+            loadBalancer.proveraBrojaUBufferu();
 
             Korisnik korisnik = new Korisnik();
             korisnik.SlanjeMerenja($"----------------------------------------------------");

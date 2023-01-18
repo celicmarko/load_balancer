@@ -24,7 +24,13 @@ namespace LoadBalancer
         {
             buffer.LoadBalancerbuffer.Add(podatak);
 
-            Console.WriteLine(buffer.LoadBalancerbuffer.Count());
+            //Console.WriteLine(buffer.LoadBalancerbuffer.Count());
+        }
+
+        public void proveraBrojaUBufferu()
+        {
+            int broj = buffer.LoadBalancerbuffer.Count();
+            Console.WriteLine($"TRENUTNO SE NALAZI {broj} merenja u buffer-u");
         }
     }
 }
