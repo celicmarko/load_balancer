@@ -4,17 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0D17D4D8-A7E6-4FDA-B5F3-EE25F2E9F554}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Writer</RootNamespace>
-    <AssemblyName>Writer</AssemblyName>
+    <ProjectGuid>{34264BA6-CCBB-4ACA-AF86-0E955FC131B0}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Worker</RootNamespace>
+    <AssemblyName>`</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -42,18 +43,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="WriterComp.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Worker.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">
-      <Project>{AA935F93-473B-45D7-8681-7396993858D5}</Project>
+      <Project>{aa935f93-473b-45d7-8681-7396993858d5}</Project>
       <Name>Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\LoadBalancer\LoadBalancer.csproj">
-      <Project>{035A2DFE-0512-402E-8786-E2A90D2C866A}</Project>
-      <Name>LoadBalancer</Name>
+    <ProjectReference Include="..\DatabaseCRUD\DatabaseCRUD.csproj">
+      <Project>{26544a40-3342-4b96-90d4-4f38223321bc}</Project>
+      <Name>DatabaseCRUD</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

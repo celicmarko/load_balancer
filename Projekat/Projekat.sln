@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.1913
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Program", "Program\Program.csproj", "{CFD1D734-2FA8-4A11-8520-279693729EF3}"
 EndProject
@@ -21,6 +21,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Model", "Model", "{C264DC85
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logger", "Logger\Logger.csproj", "{9C43D844-7573-42F6-BC6E-6C93947CC48D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Worker", "Worker\Worker.csproj", "{34264BA6-CCBB-4ACA-AF86-0E955FC131B0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -52,6 +54,10 @@ Global
 		{9C43D844-7573-42F6-BC6E-6C93947CC48D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C43D844-7573-42F6-BC6E-6C93947CC48D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C43D844-7573-42F6-BC6E-6C93947CC48D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34264BA6-CCBB-4ACA-AF86-0E955FC131B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34264BA6-CCBB-4ACA-AF86-0E955FC131B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34264BA6-CCBB-4ACA-AF86-0E955FC131B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34264BA6-CCBB-4ACA-AF86-0E955FC131B0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

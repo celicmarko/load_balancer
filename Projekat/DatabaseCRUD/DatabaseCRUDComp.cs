@@ -165,6 +165,28 @@ namespace DatabaseCRUD
             return podaciLista;
         }
 
+        public bool PostojiLiIstiRedUBaziPodataka(IDbConnection konekcija, int idMerenja, int idBrojila, int potrosnja, int mesec)
+        {
+            string selectSql = "select count(*) from brpotrosnja where idbr = :idbr_b and potrosnja = :potrosnja_b and " +
+                " mesec = :mesec_b and idmerenja = :idmerenja_b";
+
+            using (IDbCommand command = konekcija.CreateCommand())
+            {
+                command.CommandText = selectSql;
+                ParameterUtil.AddParameter(command, "idbr_b", DbType.Int32);
+                ParameterUtil.AddParameter(command, "potrosnja_b", DbType.Int32);
+                ParameterUtil.AddParameter(command, "mesec_b", DbType.Int32);
+                ParameterUtil.AddParameter(command, "idmerenja_b", DbType.Int32);
+                command.Prepare();
+                ParameterUtil.SetParameterValue(command, "idbr_b", idBrojila);
+                ParameterUtil.SetParameterValue(command, "potrosnja_b", potrosnja);
+                ParameterUtil.SetParameterValue(command, "mesec_b", mesec);
+                ParameterUtil.SetParameterValue(command, "idmerenja_b", idMerenja);
+
+                return Convert.ToInt32(command.ExecuteScalar()) != 0;
+            }
+        }
+
 
     }
 
