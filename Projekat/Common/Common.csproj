@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AktivniWorkeri.cs" />
     <Compile Include="IDatabase.cs" />
     <Compile Include="ILoadBalancer.cs" />
     <Compile Include="ISlanjePoruke.cs" />

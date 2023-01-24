@@ -17,7 +17,7 @@ namespace Worker_Cmp
             {
                 using (IDbConnection konekcija = Connection.GetConnection())
                 {
-               
+
                     if (crud.PostojiLiIstiRedUBaziPodataka(konekcija, podatak.IdMerenja, podatak.IdBrojila, podatak.Potrosnja, podatak.Mesec) == false)
                     {
                         int res = crud.UpisUBazuBrPotrosnja(podatak, konekcija);

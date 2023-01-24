@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Remoting;
 using System.Runtime.Remoting.Channels;
-//using System.Runtime.Remoting.Channels.Tcp;
+using System.Runtime.Remoting.Channels.Tcp;
 using System.Threading;
 
 namespace Worker_Cmp
@@ -12,8 +12,8 @@ namespace Worker_Cmp
         {
            
             Worker server = new Worker();
-            //TcpChannel channel = new TcpChannel(int.Parse(args[0]));
-            //ChannelServices.RegisterChannel(channel, false);
+            TcpChannel channel = new TcpChannel(int.Parse(args[0]));
+            ChannelServices.RegisterChannel(channel, false);
             string uri = "Worker";
             RemotingServices.Marshal(server, uri, server.GetType());
 

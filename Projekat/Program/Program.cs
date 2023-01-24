@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +26,43 @@ namespace Program
 
             PodatakPotrosnja podatakPotrosnja = new PodatakPotrosnja();
 
+            try
+            {
+                Console.WriteLine("Upisite koliko zelite aktivnih workera: ");
+                int brojAktivnihWorkera = int.Parse(Console.ReadLine());
+
+                if(brojAktivnihWorkera < 0)
+                {
+                    throw new ArgumentException();
+                }
+
+                for (int i = 0; i < brojAktivnihWorkera; i++)
+                {
+                    string dir = Environment.CurrentDirectory;
+                    dir = Directory.GetParent(dir).Parent.Parent.FullName;
+
+                    Process pro = new Process();
+
+                    pro.StartInfo.FileName = dir + "\\bin\\Debug\\Worker.exe";
+                    pro.StartInfo.Arguments = (7500 + i).ToString();
+                    pro.StartInfo.WindowStyle = ProcessWindowStyle.Minimized;
+
+                    pro.Start();
+
+                }
+
+                AktivniWorkeri active = new AktivniWorkeri();
+                active.WorkersCount = brojAktivnihWorkera;
+            }
+
+            catch
+            {
+                Console.WriteLine("Broj workera mora biti > 0");
+                Console.ReadLine();
+                return;
+            }
+
+
             while (true)
             {
                 Console.WriteLine("============ LOADBALANCER ============");
@@ -31,6 +70,8 @@ namespace Program
                 Console.WriteLine("1 - Unos merenja");
                 Console.WriteLine("2 - Ispis svih elektricnih brojila");
                 Console.WriteLine("3 - Ispis merenja po brojilu");
+                Console.WriteLine("4 - Ispis potrosnje po mesecima za odredjeni grad");
+                Console.WriteLine("5 - Ispis potrosnje po mesecima za konkretno brojilo");
                 Console.WriteLine("0 - Kraj\n");
 
                 int unos = int.Parse(Console.ReadLine());
