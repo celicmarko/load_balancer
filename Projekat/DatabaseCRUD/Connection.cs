@@ -11,8 +11,8 @@ namespace DatabaseCRUD
     public class Connection
     {
         public static readonly string DATA_SOURCE = "//localhost:1521/xe";
-        public static readonly string USER_ID = "dusan";
-        public static readonly string PASSWORD = "admin";
+        public static readonly string USER_ID = "Exxxxx";
+        public static readonly string PASSWORD = "ftn";
 
         private static IDbConnection instance = null;
 

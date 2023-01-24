@@ -1,11 +1,7 @@
 ﻿using Common;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data;
-using System.Data.Common;
 
 namespace DatabaseCRUD
 {
@@ -134,7 +130,7 @@ namespace DatabaseCRUD
                     }
                 }
             }
-                return podaciLista;
+            return podaciLista;
         }
 
         public List<PodatakPotrosnja> pronadjiSvaMerenja(int id)
@@ -186,9 +182,7 @@ namespace DatabaseCRUD
                 return Convert.ToInt32(command.ExecuteScalar()) != 0;
             }
         }
-
-
     }
 
-    
+
 }
