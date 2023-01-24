@@ -24,6 +24,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logger", "Logger\Logger.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Worker", "Worker\Worker.csproj", "{34264BA6-CCBB-4ACA-AF86-0E955FC131B0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonTests", "CommonTests\CommonTests.csproj", "{9C863EC7-AB70-43A2-927F-9596FAFBFF71}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2746259C-7CA2-4C97-BF56-449F7754C167}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -58,6 +65,10 @@ Global
 		{34264BA6-CCBB-4ACA-AF86-0E955FC131B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34264BA6-CCBB-4ACA-AF86-0E955FC131B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34264BA6-CCBB-4ACA-AF86-0E955FC131B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C863EC7-AB70-43A2-927F-9596FAFBFF71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C863EC7-AB70-43A2-927F-9596FAFBFF71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C863EC7-AB70-43A2-927F-9596FAFBFF71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C863EC7-AB70-43A2-927F-9596FAFBFF71}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
