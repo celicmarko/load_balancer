@@ -6,7 +6,8 @@ Projekat predstavlja simulaciju rada Load Balancer-a koji služi da ravnomerno r
 
 ## Writer
 Komponenta ima ulogu da podatke u vidu očitanih vrednosti sa kućnih brojila dobijene od korisnika prosledi Load Balancer-u. Takodje Writer je komponenta koja pokreće radnike (Worker-e).
-##Load Balancer
+
+## Load Balancer
 Komponenta je zadužena za ravnomerno raspoređivanje posla koji obavljaju Worker-i. Podaci dobijeni od Writer-a smeštaju se u buffer. Nakon prikupljenih 10 podataka u buffer-u, podaci se ravnomerno prosleđuju slobodnim Worker-ima.
 
 ## Worker
