@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Common;
+using DatabaseCRUD;
+using System;
 using System.Diagnostics;
+using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Common;
-using DatabaseCRUD;
 using Writer;
 
 namespace Program
@@ -28,42 +26,44 @@ namespace Program
 
             DatabaseAnalitics bazaAnalitics = new DatabaseAnalitics();
 
+            // pokretanje workera
             try
             {
-                Console.WriteLine("Upisite koliko zelite aktivnih workera: ");
-                int brojAktivnihWorkera = int.Parse(Console.ReadLine());
+                Console.Write("Koliko zelite aktivnih Worker-a: ");
+                int WorkersCount = int.Parse(Console.ReadLine());
 
-                if(brojAktivnihWorkera < 0)
+                if (WorkersCount < 0)
                 {
                     throw new ArgumentException();
                 }
 
-                for (int i = 0; i < brojAktivnihWorkera; i++)
+                for (int i = 0; i < WorkersCount; i++)
                 {
+                    // svaki worker ima svoj port
+                    // kreiranje novog procesa
+
                     string dir = Environment.CurrentDirectory;
                     dir = Directory.GetParent(dir).Parent.Parent.FullName;
 
                     Process pro = new Process();
 
                     pro.StartInfo.FileName = dir + "\\bin\\Debug\\Worker.exe";
-                    pro.StartInfo.Arguments = (7500 + i).ToString();
+                    pro.StartInfo.Arguments = (6500 + i).ToString();
                     pro.StartInfo.WindowStyle = ProcessWindowStyle.Minimized;
 
                     pro.Start();
-
                 }
 
-                AktivniWorkeri active = new AktivniWorkeri();
-                active.WorkersCount = brojAktivnihWorkera;
+                // cuvanje broja aktivnih workera
+                ActiveWorkers active = new ActiveWorkers();
+                active.WorkersCount = WorkersCount;
             }
-
             catch
             {
-                Console.WriteLine("Broj workera mora biti > 0");
+                Console.WriteLine("GRESKA: Broj workera mora biti pozitivan ceo broj!");
                 Console.ReadLine();
                 return;
             }
-
 
             while (true)
             {
@@ -73,7 +73,7 @@ namespace Program
                 Console.WriteLine("2 - Ispis svih elektricnih brojila");
                 Console.WriteLine("3 - Ispis merenja po brojilu");
                 Console.WriteLine("4 - Ispis potrosnje po mesecima za odredjeni grad");
-                Console.WriteLine("5 - Ispis potrosnje po mesecima za konkretno brojilo");
+                Console.WriteLine("5 - Ispis potrosnje po mesecima za odredjeno brojilo");
                 Console.WriteLine("0 - Kraj\n");
 
                 int unos = int.Parse(Console.ReadLine());
@@ -85,6 +85,12 @@ namespace Program
                     case 2: ispisSvihBrojila(); break;
 
                     case 3: ispisSvihMerenja(); break;
+
+                    case 4: ispiSvihMerenjaZaGrad(); break;
+
+                    case 5: ispisSvihMerenjaZaOdredjenoBrojilo(); break;
+
+                    case 0: return;
 
                     default: break;
 
@@ -109,7 +115,7 @@ namespace Program
                     korisnik.SlanjeMerenja($"USPESNO: Korisnik je uneo ID brojila koji je pronadjen u bazi");
                     Console.WriteLine("MERENJE: Unesi ID merenja: ");
                     int idMerenja = int.Parse(Console.ReadLine());
-                    if(baza.PostojiUBaziMerenja(idMerenja) == true)
+                    if (baza.PostojiUBaziMerenja(idMerenja) == true)
                     {
                         Console.WriteLine("GRESKA: Uneti ID merenja vec postoji u bazi");
                         korisnik.SlanjeMerenja($"----------------------------------------------------");
@@ -121,17 +127,15 @@ namespace Program
                     Console.WriteLine("MERENJE: Unesi mesec merenja: ");
                     int mesec = int.Parse(Console.ReadLine());
 
-                    podatakPotrosnja.IdMerenja = idMerenja;
-                    podatakPotrosnja.IdBrojila = idBrojila;
-                    podatakPotrosnja.Potrosnja = potrosnja;
-                    podatakPotrosnja.Mesec = mesec;
-
+                    // kreiranje objekta za slanje
+                    PodatakPotrosnja novi = new PodatakPotrosnja(idMerenja, idBrojila, potrosnja, mesec);
 
                     try
                     {
-                        writer.SlanjePoruke(podatakPotrosnja);
+                        writer.SlanjePoruke(novi);
+
                     }
-                    catch(Exception e)
+                    catch (Exception e)
                     {
                         Console.WriteLine(e.Message);
                         korisnik.SlanjeMerenja($"----------------------------------------------------");
@@ -183,7 +187,7 @@ namespace Program
                         return;
                     }
 
-                    if(baza.pronadjiSvaMerenja(idBrojila).Count() == 0)
+                    if (baza.pronadjiSvaMerenja(idBrojila).Count() == 0)
                     {
                         Console.WriteLine("UPOZERENJE: Za ovo brojilo ne postoje merenja\n\n");
                         return;
@@ -207,6 +211,8 @@ namespace Program
 
                 void ispiSvihMerenjaZaGrad()
                 {
+                    korisnik.SlanjeMerenja($"----------------------------------------------------");
+                    korisnik.SlanjeMerenja($"OBAVESTENJE: Korisnik je zatrazio ispis potrosnje za odredjeni grad");
                     Console.WriteLine("Upisite naziv grada za kog zelite da pogledate potrosnju");
                     string nazivGrada = Console.ReadLine();
                     nazivGrada = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(nazivGrada);
@@ -216,6 +222,8 @@ namespace Program
 
                 void ispisSvihMerenjaZaOdredjenoBrojilo()
                 {
+                    korisnik.SlanjeMerenja($"----------------------------------------------------");
+                    korisnik.SlanjeMerenja($"OBAVESTENJE: Korisnik je zatrazio ispis potrosnje po mesecima za odredjeno brojilo");
                     Console.WriteLine("Upisite IDBrojila za kog zelite da pogledate potrosnju po mesecima");
                     int idbro = int.Parse(Console.ReadLine());
 

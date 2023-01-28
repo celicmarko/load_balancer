@@ -1,19 +1,25 @@
 ﻿using Common;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LoadBalancer
 {
+    [Serializable]
     public class Buffer
     {
-        public List<PodatakPotrosnja> LoadBalancerbuffer {get; set; }
+        public List<PodatakPotrosnja> LoadBalancerbuffer { get; set; }
 
-        public Buffer() 
-        { 
+        public Buffer()
+        {
             LoadBalancerbuffer = new List<PodatakPotrosnja>();
+        }
+
+        public void RemoveFirst()
+        {
+            if (LoadBalancerbuffer.Count > 0)
+            {
+                LoadBalancerbuffer.RemoveAt(0);
+            }
         }
     }
 }

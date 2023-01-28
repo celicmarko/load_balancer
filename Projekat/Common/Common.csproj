@@ -43,11 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AktivniWorkeri.cs" />
+    <Compile Include="ActiveWorkers.cs" />
     <Compile Include="IDatabase.cs" />
     <Compile Include="ILoadBalancer.cs" />
     <Compile Include="ISlanjePoruke.cs" />
-    <Compile Include="IWorker.cs" />
     <Compile Include="Korisnik.cs" />
     <Compile Include="Podatak.cs" />
     <Compile Include="PodatakPotrosnja.cs" />

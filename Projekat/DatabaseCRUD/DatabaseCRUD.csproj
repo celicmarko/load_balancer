@@ -71,15 +71,15 @@
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data">
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Data.dll</HintPath>
-    </Reference>
+    <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connection.cs" />
+    <Compile Include="DatabaseAnalitics.cs" />
     <Compile Include="DatabaseCRUDComp.cs" />
+    <Compile Include="IDatabaseCRUDComp.cs" />
     <Compile Include="ParameterUtil.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -87,14 +87,6 @@
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{AA935F93-473B-45D7-8681-7396993858D5}</Project>
       <Name>Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\LoadBalancer\LoadBalancer.csproj">
-      <Project>{035a2dfe-0512-402e-8786-e2a90d2c866a}</Project>
-      <Name>LoadBalancer</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Logger\Logger.csproj">
-      <Project>{9c43d844-7573-42f6-bc6e-6c93947cc48d}</Project>
-      <Name>Logger</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -106,9 +98,6 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets" Condition="Exists('..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets')" />

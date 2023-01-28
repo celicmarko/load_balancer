@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.ServiceModel;
 
 namespace Common
@@ -22,12 +18,12 @@ namespace Common
             {
                 proxy = null;
                 proxy = kanal.CreateChannel();
-                if(proxy == null)
+                if (proxy == null)
                 {
                     Console.WriteLine("Kanal zatvoren !");
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine(e.Message);
             }

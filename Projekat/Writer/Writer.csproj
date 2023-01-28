@@ -51,7 +51,7 @@
       <Name>Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\LoadBalancer\LoadBalancer.csproj">
-      <Project>{035A2DFE-0512-402E-8786-E2A90D2C866A}</Project>
+      <Project>{035a2dfe-0512-402e-8786-e2a90d2c866a}</Project>
       <Name>LoadBalancer</Name>
     </ProjectReference>
   </ItemGroup>

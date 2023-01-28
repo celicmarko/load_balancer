@@ -1,18 +1,15 @@
 ﻿using Oracle.ManagedDataAccess.Client;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DatabaseCRUD
 {
     public class Connection
     {
         public static readonly string DATA_SOURCE = "//localhost:1521/xe";
-        public static readonly string USER_ID = "Exxxxx";
-        public static readonly string PASSWORD = "ftn";
+
+        // to do promeniti username i password
+        public static readonly string USER_ID = "dusan";
+        public static readonly string PASSWORD = "admin";
 
         private static IDbConnection instance = null;
 

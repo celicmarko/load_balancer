@@ -51,6 +51,10 @@
       <Project>{AA935F93-473B-45D7-8681-7396993858D5}</Project>
       <Name>Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Worker\Worker.csproj">
+      <Project>{bdd89b86-c209-4249-b0ce-5f97e4830fe2}</Project>
+      <Name>Worker</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

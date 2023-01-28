@@ -7,4 +7,3 @@ namespace Worker_Cmp
         bool SendToDatabseCrud(PodatakPotrosnja podatak);
     }
 }
-

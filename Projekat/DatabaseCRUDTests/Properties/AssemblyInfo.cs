@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("DatabaseCRUD")]
+[assembly: AssemblyTitle("DatabaseCRUDTests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("DatabaseCRUD")]
+[assembly: AssemblyProduct("DatabaseCRUDTests")]
 [assembly: AssemblyCopyright("Copyright ©  2023")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -19,7 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("26544a40-3342-4b96-90d4-4f38223321bc")]
+[assembly: Guid("c1711e21-c7d1-4b63-8647-c06a7e8d5d4c")]
 
 // Version information for an assembly consists of the following four values:
 //
