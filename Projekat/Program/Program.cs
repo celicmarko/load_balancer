@@ -26,6 +26,8 @@ namespace Program
 
             PodatakPotrosnja podatakPotrosnja = new PodatakPotrosnja();
 
+            DatabaseAnalitics bazaAnalitics = new DatabaseAnalitics();
+
             try
             {
                 Console.WriteLine("Upisite koliko zelite aktivnih workera: ");
@@ -201,6 +203,23 @@ namespace Program
                         Console.WriteLine(ex.Message);
                     }
                     Console.WriteLine("\n\n");
+                }
+
+                void ispiSvihMerenjaZaGrad()
+                {
+                    Console.WriteLine("Upisite naziv grada za kog zelite da pogledate potrosnju");
+                    string nazivGrada = Console.ReadLine();
+                    nazivGrada = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(nazivGrada);
+
+                    bazaAnalitics.pronadjiSvaMerenjaZaGrad(nazivGrada);
+                }
+
+                void ispisSvihMerenjaZaOdredjenoBrojilo()
+                {
+                    Console.WriteLine("Upisite IDBrojila za kog zelite da pogledate potrosnju po mesecima");
+                    int idbro = int.Parse(Console.ReadLine());
+
+                    bazaAnalitics.pronadjiPotrosnjeZaBrojilo(idbro);
                 }
             }
 
