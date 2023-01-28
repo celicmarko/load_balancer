@@ -24,6 +24,9 @@ Komponenta služi za izvlačenje statistika u vidu dva tipa izveštaja
 * potrošnja po mesecima za određeni grad
 * potrošnja po mesecima za konkretno brojilo 
 
+## AcivityDiagram
+![diagram](https://github.com/celicmarko/load_balancer/blob/main/diagram.png?raw=true)
+
 ## Autori
 * Dušan Borovićanin  PR56/2020
 * Marko Ćelić        PR57/2020
