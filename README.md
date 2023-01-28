@@ -12,17 +12,20 @@ Komponenta je zadužena za ravnomerno raspoređivanje posla koji obavljaju Worke
 
 ## Worker
 Komponenta služi za obradu podataka dobijenih od Load Balancer-a. Posredstvom DatabaseCRUD komponenta, Worker obrađuje podatke u vidu smeštanja istih u bazu podataka.
-##DatabaseCRUD
+## DatabaseCRUD
 Komponenta je zadužena za svu komunikaciju koja se odvija sa bazom podataka i za izvršavanje CRUD (Create, Read, Update, Delete) operacija. 
-
-## Baze podataka
-* brojilo     - informacije o odredjenom brojilu (id, ime, prezime, ulica, broj, grad, postanski_broj)
-* brpotrosnja - podaci o potrošnji brojila (id_brojila, idbr*, potrosnja, mesec)
 
 ## DatabaseAnalitics
 Komponenta služi za izvlačenje statistika u vidu dva tipa izveštaja 
 * potrošnja po mesecima za određeni grad
 * potrošnja po mesecima za konkretno brojilo 
+
+## Baze podataka
+* brojilo     - informacije o odredjenom brojilu (id, ime, prezime, ulica, broj, grad, postanski_broj)
+* brpotrosnja - podaci o potrošnji brojila (id_brojila, idbr*, potrosnja, mesec)
+
+## Dodatne komponente
+* Logger - zadužen za praćenje aktivnosti programa
 
 ## AcivityDiagram
 ![diagram](https://github.com/celicmarko/load_balancer/blob/main/diagram.png?raw=true)
